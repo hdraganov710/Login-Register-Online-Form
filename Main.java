@@ -20,5 +20,9 @@ public class Main {
        System.out.println("Hash3: " + Base64.getEncoder().encodeToString(hash3));
        System.out.println(PasswordHasher.verify("parola123",salt1,hash1));
        System.out.println(PasswordHasher.verify("greshna",salt1,hash1));
+       UserRepository repo = new MySqlUserRepository();
+       User user = new User("abv@abv.bg",Base64.getEncoder().encodeToString(hash1),"Ivan","Ivan",Base64.getEncoder().encodeToString(salt1));
+       repo.save(user);
+       System.out.println("Saved!");
     }
 }
