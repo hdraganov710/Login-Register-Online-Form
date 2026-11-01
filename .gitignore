@@ -1,5 +1,7 @@
 # Compiled class file
 *.class
+out/
+coverage/
 
 # Log file
 *.log
